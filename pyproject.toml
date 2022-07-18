@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "drfapi"
+version = "0.1.0"
+description = ""
+authors = ["Farkhad <frada1985@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "^4.0.6"
+pytest = "^7.1.2"
+djangorestframework = "^3.13.1"
+django-split-settings = "^1.1.0"
+psycopg2 = "^2.9.3"
+django-filter = "^22.1"
+drf-spectacular = "^0.22.1"
+django-phonenumber-field = {extras = ["phonenumbers"], version = "^6.3.0"}
+Pillow = "^9.2.0"
+django-cors-headers = "^3.13.0"
+python-dotenv = "^0.20.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
