@@ -61,7 +61,6 @@ ALLOWED_HOSTS = [
 
 AUTH_USER_MODEL = 'users.User'
 
-
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
@@ -83,8 +82,8 @@ REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
-SPECTACULAR_SETTINGS = { #TODO смотреть на настройки убрать спарта
-    'TITLE': 'Sparta API',
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Ancient wars API',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
 }
