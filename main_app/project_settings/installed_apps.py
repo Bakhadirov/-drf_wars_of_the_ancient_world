@@ -11,5 +11,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'main_app.apps.users',
+    'main_app.apps.pop_migrations',
 ]
 
