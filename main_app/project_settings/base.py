@@ -1,4 +1,6 @@
 import os
+
+import rest_framework.authentication
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -53,11 +55,15 @@ AUTH_PASSWORD_VALIDATORS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# DEBUG = int(os.environ.get("DEBUG", default=0))
 DEBUG = True
+#
+# ALLOWED_HOSTS = [
+#     os.environ.get('DJANGO_ALLOWED_HOSTS'),
+# ]
+ALLOWED_HOSTS = ['*']
 
-ALLOWED_HOSTS = [
-    os.environ.get('ALLOWED_HOST'),
-]
+# ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
 AUTH_USER_MODEL = 'users.User'
 
@@ -75,7 +81,9 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
+        # 'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ),
     'TEST_REQUEST_DEFAULT_FORMAT': 'json',
     'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
